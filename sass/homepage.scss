@@ -1,0 +1,303 @@
+// ===============================
+// Variables
+// ===============================
+$primary-color: #777676;
+$secondary-color: #444;
+$text-color: #fff;
+$hover-color: #f4a261;
+$search-bg: #222;
+$search-border: #666;
+$button-color: #ff5733;
+$hover-bg: #f4a261;
+$button-bg: #ff5733;
+$bg-light: #575454;
+$bg-dark: #121212;
+$card-bg: #1e1e1e;
+$accent-color: #00ffcc;
+$card-shadow: rgba(0, 0, 0, 0.1);
+$glass-bg: rgba(255, 255, 255, 0.1);
+
+// ===============================
+// Reset
+// ===============================
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  // border: red solid 1px;
+}
+
+body {
+  background: $search-bg;
+  font-family: Arial, sans-serif;
+  color: $text-color;
+}
+
+// ===============================
+// Hero Section
+// ===============================
+.banner {
+  position: relative;
+  height: 800px;
+  background: url("/images/bg.png") no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 999;
+}
+
+.banner-content {
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  z-index: 10;
+}
+
+.banner-title {
+  font-size: 3rem;
+  font-weight: bold;
+  opacity: 0;
+  animation: fadeInTitle 3s ease-out forwards;
+  color: $text-color;
+}
+
+.join-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 15px 30px;
+  background-color: $button-color;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
+    background-color: $hover-color;
+  }
+}
+
+// Animations
+@keyframes fadeInTitle {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// ===============================
+// Responsive Hero Animation (optional override)
+@media (max-width: 900px) {
+  @keyframes fadeInTitle {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+// ===============================
+// Image Slider
+// ===============================
+.container {
+  padding: 2rem;
+}
+
+.slider-wrapper {
+  position: relative;
+  max-width: 85rem;
+  margin: 0 auto;
+}
+
+.slider {
+  display: flex;
+  aspect-ratio: 16 / 9;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+  border-radius: 0.5rem;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  img {
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+    object-fit: cover;
+  }
+}
+
+.slider-nav {
+  display: flex;
+  column-gap: 1rem;
+  position: absolute;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+
+  a {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: $text-color;
+    opacity: 0.75;
+    transition: opacity ease 250ms;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+// ===============================
+// Grid View - Achievements
+// ===============================
+.latest {
+  font-family: Arial, sans-serif;
+  background-color: $bg-light;
+  padding: 20px;
+}
+
+.achievements {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.achievement {
+  background: linear-gradient(145deg, #303030, #111);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  color: $text-color;
+  
+  &:hover {
+    transform: translateY(-5px);
+    border: 1px solid $button-bg;
+    box-shadow: 0 10px 50px rgba(253, 107, 40, 0.4);
+  }
+}
+
+.emoji {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+// ===============================
+// Live Stats
+// ===============================
+.auto-stats {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $bg-dark;
+  color: $text-color;
+  padding: 20px;
+}
+
+.stats-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: $card-bg;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  width: 90%;
+  max-width: 1000px;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  color: $text-color;
+
+  span {
+    color: $accent-color;
+    text-shadow: 0 0 10px $accent-color, 0 0 20px $accent-color, 0 0 30px $accent-color;
+  }
+}
+
+.stats-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.stat {
+  flex: 1;
+  min-width: 120px;
+  text-align: center;
+  margin: 10px;
+  padding: 15px;
+  border-radius: 10px;
+  background: $glass-bg;
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.stat-title {
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #bbb;
+}
+
+.counter {
+  font-size: 32px;
+  color: $accent-color;
+  font-weight: bold;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 1s ease-in-out forwards;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+// Responsive stats layout
+@media (max-width: 600px) {
+  .stats-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stat {
+    width: 100%;
+    max-width: 250px;
+  }
+}

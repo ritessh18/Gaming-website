@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Game Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="./sass/game.css">
+    <link rel="stylesheet" href="./sass/navbar.css">
+    <link rel="stylesheet" href="./sass/footer.css">
+    <script src="./js/menu.js"></script>
+   
+
+  </head>
+
+
+
+<body>
+ <!-- nav bar -->
+ <nav class="navbar">
+  <div class="navbar-top">
+          <a href="home.html" class="logo">
+          <img src="./images/playstation-fill.png" alt="">
+      </a>
+      <ul class="nav-links">
+          <li class="dropdown">
+              <a href="">Achievements</a>
+              <div class="dropdown-content">
+                  <a href="achieve.html">Awards</a>
+                  <a href="#">Milestones</a>
+              </div>
+          </li>
+          <li class="dropdown">
+              <a href="tourny.html">Tournaments</a>
+              <div class="dropdown-content">
+                  <a href="tourny.html">Upcoming</a>
+                  <a href="#">Past</a>
+              </div>
+          </li>
+          <li class="dropdown">
+              <a href="">Game Portfolio</a>
+              <div class="dropdown-content">
+                  <a href="gameportfolio.html">PC Games</a>
+                  <a href="#">Mobile Games</a>
+              </div>
+          </li>
+          <li><a href="contactus.html">Contact</a></li>
+      </ul>
+      <div class="search-container">
+          <input type="text" class="search-bar" id="search" placeholder="Search..." >
+          <button id="search-btn">
+              <img src="./images/search-solid.svg" alt="Search" style="width: 20px; height: 20px;" />
+            </button>
+      </div>
+      
+  </div>
+  
+
+  <div class="menu-toggle" >
+  <span></span>
+  <span></span>
+  <span></span>
+  </div>
+
+  <div id="popup-box" class="popup-box">
+      <p>No results found.</p>
+    </div>
+</nav>
+<!-- nav bar end -->
+
+<div class="body1">
+<h1>🎮 My Game Portfolio</h1>
+
+<div class="grid">
+  <!-- CARD 1 -->
+  <div class="card-container">
+    <div class="game-card">
+      <div class="card-front">
+        <img src="https://wallpapers.com/images/high/4k-hd-valorant-xpognbgk8tu2bor7.webp" alt="Valorant">
+        <div class="info">
+          <p><strong>Playtime:</strong> 120 hrs</p>
+          <p><strong>Rank:</strong> Diamond</p>
+        </div>
+      </div>
+      <div class="card-back">
+        <div class="info">
+          <h4>Review</h4>
+          <p>Intense gameplay, amazing gunplay. Stealth and tactics are key!</p>
+          <h4>Guide</h4>
+          <ul class="achievements">
+            <li>• Use shadow burst</li>
+            <li>• Scout maps thoroughly</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 2 -->
+  <div class="card-container">
+    <div class="game-card">
+      <div class="card-front">
+        <img src="https://upload.wikimedia.org/wikipedia/en/9/9f/Cyberpunk_2077_box_art.jpg" alt="Cyberpunk">
+        <div class="info">
+          <p><strong>Playtime:</strong> 200 hrs</p>
+          <p><strong>Rank:</strong> Master</p>
+        </div>
+      </div>
+      <div class="card-back">
+        <div class="info">
+          <h4>Review</h4>
+          <p>Cyberpunk thrill with sniper precision. Best in class for story.</p>
+          <h4>Guide</h4>
+          <ul class="achievements">
+            <li>• Use SMG + rifle</li>
+            <li>• Control the high ground</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 3 -->
+  <div class="card-container">
+    <div class="game-card">
+      <div class="card-front">
+        <img src="data:image/jpeg;base64,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" alt="Elden Ring">
+        <div class="info">
+          <p><strong>Playtime:</strong> 180 hrs</p>
+          <p><strong>Rank:</strong> Rune Knight</p>
+        </div>
+      </div>
+      <div class="card-back">
+        <div class="info">
+          <h4>Review</h4>
+          <p>Massive open world. Dark Souls meets magic and exploration.</p>
+          <h4>Guide</h4>
+          <ul class="achievements">
+            <li>• Two-hand greatsword early</li>
+            <li>• Explore every ruin</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 4 -->
+  <div class="card-container">
+    <div class="game-card">
+      <div class="card-front">
+        <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/570/header.jpg" alt="Dota 2">
+        <div class="info">
+          <p><strong>Playtime:</strong> 1000 hrs</p>
+          <p><strong>Rank:</strong> Divine</p>
+        </div>
+      </div>
+      <div class="card-back">
+        <div class="info">
+          <h4>Review</h4>
+          <p>Strategic depth unmatched. Endless heroes and team tactics.</p>
+          <h4>Guide</h4>
+          <ul class="achievements">
+            <li>• Learn 3 core roles</li>
+            <li>• Focus on map control</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2>📺 Live Stream</h2>
+<iframe src="https://www.youtube.com/embed/e_E9W2vsRbQ" title="Live Stream"></iframe>
+
+<section id="live-now">
+  <h1>🎥 Live Now</h1>
+  <div id="live-stream">
+    <p>Checking for live stream...</p>
+  </div>
+</section>
+
+<style>
+ 
+</style>
+
+<h2>📝 Reviews</h2>
+
+<div class="review" data-id="1">
+  <h3>Elden Ring</h3>
+  <p>A beautiful world, punishing difficulty, and rich lore make this game unforgettable. 10/10 would die again.</p>
+  <button class="upvote">👍</button>
+  <button class="downvote">👎</button>
+  <span class="score">Score: 12</span>
+</div>
+
+<div class="review" data-id="2">
+  <h3>Cyberpunk 2077</h3>
+  <p>Once patched, this game shines with immersive storytelling and satisfying combat.</p>
+  <button class="upvote">👍</button>
+  <button class="downvote">👎</button>
+  <span class="score">Score: 8</span>
+</div>
+
+</div>
+
+
+<!-- footer -->
+
+<footer class="footer">
+    <div class="footer-container">
+      <div class="footer-column social-links">
+        <h4>Follow Us</h4>
+        <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+        <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+        <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+      </div>
+      <div class="footer-column newsletter">
+        <h4>Newsletter</h4>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Enter your email" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+      <div class="copyright">
+        <h4>© 2025 Gaming Hub</h4>
+        <p>All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  
+
+
+
+    <!-- search btn  -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const searchBtn = document.getElementById("search-btn");
+            const searchInput = document.getElementById("search");
+        
+            if (searchBtn && searchInput) {
+                searchBtn.addEventListener("click", searchFunction);
+        
+                searchInput.addEventListener("keypress", function(e) {
+                    if (e.key === "Enter") {
+                        e.preventDefault();
+                        searchFunction();
+                    }
+                });
+            }
+        });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+        <script src="./js/game.js"></script>
+</body>
+
+  </html>

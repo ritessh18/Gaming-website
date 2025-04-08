@@ -1,0 +1,213 @@
+// Variables
+$bg-color: #0a0a0a;
+$container-bg: #1a1a1a;
+$chat-bg: #121212;
+$primary: #ff6600;
+$primary-hover: #ffa64d;
+$danger: #cc0000;
+$text-light: #fff;
+$text-dark: #000;
+$placeholder: #999;
+$input-bg: #262626;
+$box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+
+.body1 {
+  font-family: "Segoe UI", sans-serif;
+  background: $bg-color;
+  color: $text-light;
+  padding: 20px;
+  margin: 0;
+
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .main-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: auto;
+
+    form,
+    #chatContainer {
+      flex: 1;
+      min-width: 300px;
+      background: $container-bg;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: $box-shadow;
+    }
+  }
+
+  input,
+  textarea {
+    width: 95%;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: $input-bg;
+    color: $text-light;
+
+    &::placeholder {
+      color: $placeholder;
+    }
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: $primary;
+    color: $text-dark;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: $primary-hover;
+      transform: scale(1.05);
+      box-shadow: 0 0 12px $primary;
+    }
+  }
+
+  #chatbox {
+    height: 300px;
+    overflow-y: auto;
+    background: $chat-bg;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+
+    .message {
+      margin-bottom: 10px;
+
+      .text {
+        padding: 10px 14px;
+        border-radius: 10px;
+        max-width: 80%;
+      }
+
+      &.user-msg {
+        .text {
+          background: $primary;
+          color: $text-dark;
+          margin-left: auto;
+          text-align: right;
+        }
+      }
+
+      &.bot-msg {
+        .text {
+          background: #2a2a2a;
+          color: $text-light;
+          text-align: left;
+        }
+      }
+
+      .timestamp {
+        font-size: 0.7rem;
+        opacity: 0.6;
+        margin-top: 4px;
+        display: block;
+      }
+    }
+  }
+
+  .typing {
+    display: flex;
+    gap: 5px;
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      background: #ccc;
+      border-radius: 50%;
+      animation: blink 1s infinite;
+
+      &:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+
+      &:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+    }
+  }
+
+  .input-group {
+    display: flex;
+    gap: 10px;
+
+    #userInput {
+      flex-grow: 1;
+    }
+  }
+
+  .clear-btn {
+    display: block;
+    margin: 1rem auto 0;
+    background: $danger;
+    color: white;
+    width: fit-content;
+  }
+
+  .social-links {
+    text-align: center;
+    margin-top: 2rem;
+
+    a {
+      color: $primary;
+      margin: 0 10px;
+      font-size: 1.8rem;
+      transition: transform 0.3s ease, color 0.3s ease;
+
+      &:hover {
+        transform: scale(1.2);
+        color: $primary-hover;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .main-container {
+      flex-direction: column;
+    }
+
+    input,
+    textarea,
+    button {
+      font-size: 0.95rem;
+    }
+
+    #chatbox {
+      height: 250px;
+      padding: 10px;
+    }
+
+    .message .text {
+      font-size: 0.95rem;
+      padding: 8px 12px;
+    }
+
+    .social-links a {
+      font-size: 1.4rem;
+    }
+  }
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+}

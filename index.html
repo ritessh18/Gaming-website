@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./sass/homepage.css">
+    <link rel="stylesheet" href="./sass/navbar.css">
+    <link rel="stylesheet" href="./sass/footer.css">
+    <script src="./js/home.js"></script>
+    <script src="./js/menu.js"></script>
+    <title>Gaming Hub</title>
+</head>
+<body>
+ <!-- nav bar -->
+ <nav class="navbar">
+    <div class="navbar-top">
+            <a href="home.html" class="logo">
+            <img src="./images/playstation-fill.png" alt="">
+        </a>
+        <ul class="nav-links">
+            <li class="dropdown">
+                <a href="">Achievements</a>
+                <div class="dropdown-content">
+                    <a href="achieve.html">Awards</a>
+                    <a href="#">Milestones</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="">Tournaments</a>
+                <div class="dropdown-content">
+                    <a href="tourny.html">Upcoming</a>
+                    <a href="#">Past</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="">Game Portfolio</a>
+                <div class="dropdown-content">
+                    <a href="gameportfolio.html">PC Games</a>
+                    <a href="#">Mobile Games</a>
+                </div>
+            </li>
+            <li><a href="contactus.html">Contact</a></li>
+        </ul>
+        <div class="search-container">
+            <input type="text" class="search-bar" id="search" placeholder="Search..." >
+            <button id="search-btn">
+                <img src="./images/search-solid.svg" alt="Search" style="width: 20px; height: 20px;" />
+              </button>
+        </div>
+        
+    </div>
+    
+
+    <div class="menu-toggle" >
+    <span></span>
+    <span></span>
+    <span></span>
+    </div>
+
+    <div id="popup-box" class="popup-box">
+        <p>No results found.</p>
+      </div>
+</nav>
+<!-- nav bar end -->
+
+
+   <!-- hero section -->
+    <section class="container">
+        <div class="slider-wrapper">
+            <div class="slider">
+                <img id="slide-1" src="/images/diablo-4-bg.jpeg" alt="" />
+                <img id="slide-2" src="/images/final-fantasy-bg.jpeg" alt="" />
+                <img id="slide-3" loading="lazy" src="/images/god-of-war-bg.jpeg" alt="" />
+            </div>
+            <div class="slider-nav">
+                <a href="#slide-1"></a>
+                <a href="#slide-2"></a>
+                <a href="#slide-3"></a>
+            </div>
+        </div>
+
+        <div class="banner-content">
+            <h1 class="banner-title">Level Up Your Game!</h1>
+            <a href="#join-tournament" class="join-button">Join Tournament</a>
+        </div>
+    </section>
+
+
+    <!-- grid view -->
+<section class="latest">
+    <div class="achievements" id="achievements"></div>
+</section>
+
+<!-- live stats-->
+
+<section class="auto-stats">
+    <div class="stats-container">
+        <div class="title">Live Game Stats</div>
+        <div class="stats-row">
+            <div class="stat">
+                <div class="stat-title">Current Rank</div>
+                <span class="counter" id="rank">5</span>
+            </div>
+            <div class="stat">
+                <div class="stat-title">Highest Score</div>
+                <span class="counter" id="score">1200</span>
+            </div>
+            <div class="stat">
+                <div class="stat-title">Win Rate</div>
+                <span class="counter" id="winRate">55 %</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="popup-box" class="popup-box">
+    <p>No results found.</p>
+  </div>
+
+<!-- footer -->
+
+<footer class="footer">
+    <div class="footer-container">
+      <div class="footer-column social-links">
+        <h4>Follow Us</h4>
+        <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+        <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+        <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+      </div>
+      <div class="footer-column newsletter">
+        <h4>Newsletter</h4>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Enter your email" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+      <div class="copyright">
+        <h4>© 2025 Gaming Hub</h4>
+        <p>All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+
+    <script> // transition code heropage
+        const slider = document.querySelector(".slider");
+        const images = document.querySelectorAll(".slider img");
+        let index = 0;
+        function autoSlide() {
+            if (index >= images.length - 1) {
+                index = 0;
+                slider.scrollTo({ left: 0, behavior: "smooth" })
+            } else {
+                index++;
+                slider.scrollBy({ left: slider.clientWidth, behavior: "smooth" });
+    }
+}
+
+setInterval(autoSlide, 5000); // Change image every 3 sec
+
+
+
+    </script>
+
+    <!-- search btn  -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const searchBtn = document.getElementById("search-btn");
+            const searchInput = document.getElementById("search");
+        
+            if (searchBtn && searchInput) {
+                searchBtn.addEventListener("click", searchFunction);
+        
+                searchInput.addEventListener("keypress", function(e) {
+                    if (e.key === "Enter") {
+                        e.preventDefault();
+                        searchFunction();
+                    }
+                });
+            }
+        });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+</body>
+</html>

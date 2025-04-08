@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Me</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="./sass/navbar.css">
+    <link rel="stylesheet" href="./sass/footer.css">
+    <link rel="stylesheet" href="./sass/contact.css">
+    <script src="./js/menu.js"></script>
+    
+
+</head>
+<body>
+  <!-- nav bar -->
+  <nav class="navbar">
+    <div class="navbar-top">
+            <a href="home.html" class="logo">
+            <img src="./images/playstation-fill.png" alt="">
+        </a>
+        <ul class="nav-links">
+            <li class="dropdown">
+                <a href="">Achievements</a>
+                <div class="dropdown-content">
+                    <a href="achieve.html">Awards</a>
+                    <a href="#">Milestones</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="tourny.html">Tournaments</a>
+                <div class="dropdown-content">
+                    <a href="tourny.html">Upcoming</a>
+                    <a href="#">Past</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="">Game Portfolio</a>
+                <div class="dropdown-content">
+                    <a href="gameportfolio.html">PC Games</a>
+                    <a href="#">Mobile Games</a>
+                </div>
+            </li>
+            <li><a href="contactus.html">Contact</a></li>
+        </ul>
+        <div class="search-container">
+            <input type="text" class="search-bar" id="search" placeholder="Search..." >
+            <button id="search-btn">
+                <img src="./images/search-solid.svg" alt="Search" style="width: 20px; height: 20px;" />
+              </button>
+        </div>
+        
+    </div>
+    
+
+    <div class="menu-toggle" >
+    <span></span>
+    <span></span>
+    <span></span>
+    </div>
+
+    <div id="popup-box" class="popup-box">
+        <p>No results found.</p>
+      </div>
+</nav>
+<!-- nav bar end -->
+
+  <div class="body1">
+
+    
+  <h1>Contact Me</h1>
+
+  <div class="main-container">
+    <!-- Contact Form -->
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <input type="text" id="subject" placeholder="Subject" required>
+      <textarea id="message" placeholder="Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+
+    <!-- Chat Box -->
+    <div id="chatContainer">
+      <h2>Live Chat</h2>
+      <div id="chatbox" aria-live="polite" role="log"></div>
+      <div class="input-group">
+        <input type="text" id="userInput" placeholder="Type your message..." />
+        <button onclick="sendMessage()">Send</button>
+      </div>
+      <button class="clear-btn" onclick="clearChat()">Clear Chat</button>
+    </div>
+  </div>
+
+  <!-- Social Media -->
+  <div class="social-links">
+    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://discord.com" target="_blank"><i class="fab fa-discord"></i></a>
+    <a href="https://x.com" target="_blank"><i class="fab fa-x-twitter"></i></a>
+    <a href="https://twitch.tv" target="_blank"><i class="fab fa-twitch"></i></a>
+  </div>
+
+
+  </div>
+
+
+
+  
+<!-- footer -->
+
+<footer class="footer">
+    <div class="footer-container">
+      <div class="footer-column social-links">
+        <h4>Follow Us</h4>
+        <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+        <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+        <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+      </div>
+      <div class="footer-column newsletter">
+        <h4>Newsletter</h4>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Enter your email" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+      <div class="copyright">
+        <h4>© 2025 Gaming Hub</h4>
+        <p>All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  
+
+
+
+    <!-- search btn  -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const searchBtn = document.getElementById("search-btn");
+            const searchInput = document.getElementById("search");
+        
+            if (searchBtn && searchInput) {
+                searchBtn.addEventListener("click", searchFunction);
+        
+                searchInput.addEventListener("keypress", function(e) {
+                    if (e.key === "Enter") {
+                        e.preventDefault();
+                        searchFunction();
+                    }
+                });
+            }
+        });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+        <script src="./js/contactus.js"></script>
+</body>
+</html>

@@ -1,0 +1,251 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+main {
+  padding: 20px;
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
+}
+
+header {
+  background: linear-gradient(90deg, #0f0f0f, #1f1f1f);
+  color: #ffffff;
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 1.6rem;
+}
+@media (max-width: 600px) {
+  header {
+    font-size: 1.2rem;
+    padding: 20px 15px;
+  }
+}
+
+h2 {
+  margin-top: 20px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.section-header h2 {
+  margin: 0;
+}
+@media (max-width: 600px) {
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.tournament-cards {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  margin-top: 20px;
+}
+@media (max-width: 600px) {
+  .tournament-cards {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.card {
+  background: #1e1e1e;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  border: 1px solid #ff5733;
+  box-shadow: 0 10px 30px rgba(253, 107, 40, 0.4);
+}
+.card h3 {
+  margin: 0 0 10px;
+}
+@media (max-width: 600px) {
+  .card {
+    padding: 15px;
+  }
+}
+
+.countdown {
+  font-size: 0.9rem;
+  color: #ff6e6e;
+  font-weight: bold;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 100%;
+  width: 400px;
+  margin: 20px auto;
+  background: #1e1e1e;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+@media (max-width: 600px) {
+  form {
+    width: 100%;
+    padding: 15px;
+  }
+}
+
+input,
+select,
+button {
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #444;
+  border-radius: 6px;
+  background: #2a2a2a;
+  color: #f0f0f0;
+  width: 100%;
+}
+
+button {
+  background: #ff5733;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+button:hover {
+  background: #f4a261;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.match {
+  background: #2c2c2c;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  color: #f0f0f0;
+}
+
+.registered-list {
+  padding: 10px;
+  background: #1e1e1e;
+  border-radius: 10px;
+  margin: 20px auto;
+  max-width: 400px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  color: #f0f0f0;
+}
+@media (max-width: 600px) {
+  .registered-list {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+.delete-btn {
+  width: 50px;
+  background: transparent;
+  border: none;
+  color: #ff4d4d;
+  font-size: 1rem;
+  padding: 4px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-left: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.delete-btn:hover {
+  background-color: rgba(224, 224, 224, 0.7137254902);
+  color: white;
+  transform: scale(1.05);
+}
+
+#bracketGrid > div {
+  transition: all 0.3s ease;
+}
+
+#bracketGrid > div:hover {
+  transform: translateY(-5px);
+  border: 1px solid #ff5733;
+  box-shadow: 0 10px 30px rgba(253, 107, 40, 0.4);
+}
+
+.popup-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 10px;
+}
+
+.popup-content {
+  background-color: #1e1e1e;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  color: #fff;
+  max-width: 90%;
+  width: 300px;
+}
+.popup-content button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #ff5733;
+  border: none;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.popup-content button:hover {
+  background-color: #f4a261;
+}
+@media (max-width: 600px) {
+  .popup-content {
+    width: 90%;
+    padding: 20px;
+    font-size: 0.95rem;
+  }
+  .popup-content button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+  }
+  .popup-content #popupMessage {
+    word-wrap: break-word;
+  }
+}
+
+.hidden {
+  display: none;
+}/*# sourceMappingURL=tourny.css.map */

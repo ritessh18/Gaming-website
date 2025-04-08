@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./sass/navbar.css">
+    <link rel="stylesheet" href="./sass/achieve.css">
+    <link rel="stylesheet" href="./sass/footer.css">
+    <script src="./js/achieve.js"></script>
+    <script src="./js/menu.js"></script>
+    <title>Achievements</title>
+</head>
+<body>
+  <!-- nav bar -->
+  <nav class="navbar">
+    <div class="navbar-top">
+            <a href="home.html" class="logo">
+            <img src="./images/playstation-fill.png" alt="">
+        </a>
+        <ul class="nav-links">
+            <li class="dropdown">
+                <a href="">Achievements</a>
+                <div class="dropdown-content">
+                    <a href="achieve.html">Awards</a>
+                    <a href="#">Milestones</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="tourny.html">Tournaments</a>
+                <div class="dropdown-content">
+                    <a href="tourny.html">Upcoming</a>
+                    <a href="#">Past</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="">Game Portfolio</a>
+                <div class="dropdown-content">
+                    <a href="gameportfolio.html">PC Games</a>
+                    <a href="#">Mobile Games</a>
+                </div>
+            </li>
+            <li><a href="contactus.html">Contact</a></li>
+        </ul>
+        <div class="search-container">
+            <input type="text" class="search-bar" id="search" placeholder="Search..." >
+            <button id="search-btn">
+                <img src="./images/search-solid.svg" alt="Search" style="width: 20px; height: 20px;" />
+              </button>
+        </div>
+        
+    </div>
+    
+
+    <div class="menu-toggle" >
+    <span></span>
+    <span></span>
+    <span></span>
+    </div>
+
+    <div id="popup-box" class="popup-box">
+        <p>No results found.</p>
+      </div>
+</nav>
+<!-- nav bar end -->
+ 
+    <header>
+        <h1>Gamer Portfolio</h1>
+    </header>
+    
+    <section id="trophy-showcase">
+        <h2>Trophy Showcase</h2>
+        <div class="trophy-grid">
+            <div class="trophy">🏆</div>
+            <div class="trophy">🥇</div>
+            <div class="trophy">🥈</div>
+            <div class="trophy">🥉</div>
+            <div class="trophy">🏅</div>
+        </div>
+    </section>
+    
+    <section id="rank-timeline">
+        <h2>Rank Timeline</h2>
+        <div class="timeline">
+            <div class="rank">2019 - Bronze</div>
+            <div class="rank">2020 - Silver</div>
+            <div class="rank">2021 - Gold</div>
+            <div class="rank">2022 - Platinum</div>
+            <div class="rank">2023 - Diamond</div>
+        </div>
+    </section>
+    
+    <section class="lead">
+        <div class="leaderboard">
+    <h2>LEADERBOARD</h2>
+    <ol id="leaderboard-list">
+      <p class="loading">Loading rankings...</p>
+    </ol>
+</div>
+  </section>
+
+    <!-- footer -->
+
+<footer class="footer">
+    <div class="footer-container">
+      <div class="footer-column social-links">
+        <h4>Follow Us</h4>
+        <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+        <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+        <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+      </div>
+      <div class="footer-column newsletter">
+        <h4>Newsletter</h4>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Enter your email" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+      <div class="copyright">
+        <h4>© 2025 Gaming Hub</h4>
+        <p>All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+<!-- search btn -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const searchBtn = document.getElementById("search-btn");
+        const searchInput = document.getElementById("search");
+    
+        if (searchBtn && searchInput) {
+            searchBtn.addEventListener("click", searchFunction);
+    
+            searchInput.addEventListener("keypress", function(e) {
+                if (e.key === "Enter") {
+                    e.preventDefault();
+                    searchFunction();
+                }
+            });
+        }
+    });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+</body>
+
+</body>
+</html>

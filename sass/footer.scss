@@ -1,0 +1,96 @@
+// Variables
+$primary-color: #777676 !default;
+$secondary-color: #444 !default;
+$text-color: #fff !default;
+$hover-color: #f4a261 !default;
+$search-bg: #222 !default;
+$search-border: #666 !default;
+$button-color: #ff5733 !default;
+$footer-bg: #1a1a1a !default;
+$link-color: #bbb !default;
+$heading-border-color: #444 !default;
+
+// Footer Styles
+.footer {
+  background-color: $footer-bg !important;
+  color: #eee !important;
+  padding: 40px 20px !important;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+  border-top: 3px solid $button-color !important;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5) !important;
+
+  .footer-container {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
+    gap: 30px !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+  }
+
+  .footer-column {
+    h4 {
+      margin-bottom: 15px !important;
+      font-size: 1.3rem !important;
+      color: $text-color !important;
+      border-bottom: 2px solid $heading-border-color !important;
+      display: inline-block !important;
+      padding-bottom: 5px !important;
+    }
+  }
+
+  a {
+    display: block !important;
+    color: $link-color !important;
+    margin-bottom: 8px !important;
+    text-decoration: none !important;
+    transition: color 0.3s !important;
+
+    &:hover {
+      color: $hover-color !important;
+    }
+  }
+
+  .newsletter-form {
+    display: flex !important;
+    gap: 10px !important;
+    flex-wrap: wrap !important;
+
+    input[type="email"],
+    button {
+      padding: 10px 15px !important;
+      font-size: 1rem !important;
+      border: none !important;
+      border-radius: 5px !important;
+      box-sizing: border-box !important;
+    }
+
+    input[type="email"] {
+      flex: 1 !important;
+      min-width: 180px !important;
+    }
+
+    button {
+      background-color: $button-color !important;
+      color: $text-color !important;
+      cursor: pointer !important;
+      transition: background-color 0.3s ease !important;
+
+      &:hover {
+        background-color: $hover-color !important;
+      }
+    }
+  }
+
+  .copyright {
+    padding-top: 15px !important;
+    font-size: 1.2rem !important;
+    text-align: center !important;
+  }
+
+  @media (max-width: 600px) {
+    .footer-container {
+      grid-template-columns: 1fr !important;
+      text-align: center !important;
+    }
+  }
+}

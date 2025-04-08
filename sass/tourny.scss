@@ -1,0 +1,278 @@
+// ==============================
+// Variables
+// ==============================
+$primary-bg: #121212;
+$secondary-bg: #1e1e1e;
+$accent-bg: #2a2a2a;
+$hover-bg: #f4a261;
+$button-bg: #ff5733;
+$light-text: #f0f0f0;
+$header-gradient-start: #0f0f0f;
+$header-gradient-end: #1f1f1f;
+$card-shadow: rgba(0, 0, 0, 0.4);
+$form-shadow: rgba(0, 0, 0, 0.3);
+$popup-shadow: rgba(0, 0, 0, 0.5);
+$delete-color: #ff4d4d;
+$countdown-color: #ff6e6e;
+$overlay-bg: rgba(0, 0, 0, 0.7);
+
+// ==============================
+// Global Styles
+// ==============================
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: $primary-bg;
+  color: $light-text;
+}
+
+main {
+  padding: 20px;
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
+}
+
+header {
+  background: linear-gradient(90deg, $header-gradient-start, $header-gradient-end);
+  color: #ffffff;
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 1.6rem;
+
+  @media (max-width: 600px) {
+    font-size: 1.2rem;
+    padding: 20px 15px;
+  }
+}
+
+h2{
+margin-top: 20px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  h2 {
+    margin: 0;
+  }
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.tournament-cards {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  margin-top: 20px;
+
+  @media (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.card {
+  background: $secondary-bg;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px $card-shadow;
+  transition: transform 0.2s ease;
+  
+
+  &:hover {
+    transform: translateY(-5px);
+    border: 1px solid $button-bg;
+    box-shadow: 0 10px 30px rgba(253, 107, 40, 0.4);
+  }
+
+  h3 {
+    margin: 0 0 10px;
+  }
+
+  @media (max-width: 600px) {
+    padding: 15px;
+  }
+}
+
+.countdown {
+  font-size: 0.9rem;
+  color: $countdown-color;
+  font-weight: bold;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 100%;
+  width: 400px;
+  margin: 20px auto;
+  background: $secondary-bg;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px $form-shadow;
+
+  @media (max-width: 600px) {
+    width: 100%;
+    padding: 15px;
+  }
+}
+
+input,
+select,
+button {
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #444;
+  border-radius: 6px;
+  background: $accent-bg;
+  color: $light-text;
+  width: 100%;
+}
+
+button {
+  background: $button-bg;
+  color: white;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    background: $hover-bg;
+  }
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.match {
+  background: #2c2c2c;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  color: $light-text;
+}
+
+.registered-list {
+  padding: 10px;
+  background: $secondary-bg;
+  border-radius: 10px;
+  margin: 20px auto;
+  max-width: 400px;
+  box-shadow: 0 2px 10px $card-shadow;
+  color: $light-text;
+
+  @media (max-width: 600px) {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+.delete-btn {
+  width: 50px;
+  background: transparent;
+  border: none;
+  color: $delete-color;
+  font-size: 1rem;
+  padding: 4px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-left: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+
+  &:hover {
+    background-color: #e0e0e0b6;
+    color: white;
+    transform: scale(1.05);
+  }
+}
+
+
+#bracketGrid > div {
+  transition: all 0.3s ease;
+}
+
+#bracketGrid > div:hover {
+  transform: translateY(-5px);
+    border: 1px solid $button-bg;
+    box-shadow: 0 10px 30px rgba(253, 107, 40, 0.4);
+}
+
+// pop up
+
+.popup-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  inset: 0;
+  background-color: $overlay-bg;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 10px;
+}
+
+.popup-content {
+  background-color: $secondary-bg;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 0 15px $popup-shadow;
+  color: #fff;
+  max-width: 90%;
+  width: 300px;
+
+  button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: $button-bg;
+    border: none;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $hover-bg;
+    }
+  }
+
+  @media (max-width: 600px) {
+    width: 90%;
+    padding: 20px;
+    font-size: 0.95rem;
+
+    button {
+      width: 100%;
+      padding: 12px;
+      font-size: 1rem;
+    }
+
+    #popupMessage {
+      word-wrap: break-word;
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}
