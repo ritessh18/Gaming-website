@@ -27,7 +27,7 @@ document.querySelectorAll('.review').forEach(review => {
 
     const CLIENT_ID = 'gp762nuuoqcoxypju8c569th9wz7q5';
     const ACCESS_TOKEN = 'pd2284mc4osx9c211xfk1bbv3qyby2';
-    const USER_LOGIN = 'Zellsis'; // Replace this
+    const USER_LOGIN = 'PGL'; // Replace this
     
   
     async function fetchLiveStream() {
