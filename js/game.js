@@ -47,7 +47,7 @@ document.querySelectorAll('.review').forEach(review => {
           container.innerHTML = `
             <h2>${stream.title}</h2>
             <iframe
-              src="https://player.twitch.tv/?channel=${USER_LOGIN}&parent=http://localhost"
+              src="https://player.twitch.tv/?channel=${USER_LOGIN}&parent=gaming-website-topaz.vercel.app"
               allowfullscreen>
             </iframe>
           `;
